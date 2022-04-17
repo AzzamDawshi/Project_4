@@ -1,0 +1,12 @@
+-- auto-generated definition
+create table products
+(
+    id         int         not null
+        primary key,
+    name       varchar(10) null,
+    price      int         null,
+    status     varchar(6)  check (status='start'or status='finish' ),
+    created_at datetime
+)
+    engine = InnoDB;
+
