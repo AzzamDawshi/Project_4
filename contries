@@ -1,0 +1,13 @@
+-- auto-generated definition
+create table countries
+(
+    code           int         not null
+        primary key,
+    name           varchar(20) null,
+    continent_name varchar(20) null,
+    constraint continent_name
+        unique (continent_name),
+    constraint name
+        unique (name)
+)
+    engine = InnoDB;
