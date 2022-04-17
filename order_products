@@ -1,0 +1,17 @@
+-- auto-generated definition
+create table order_products
+(
+    order_id   int           not null
+        primary key,
+    product_id int           not null,
+    quantity   int default 0 not null,
+    constraint order_products_ibfk_1
+        foreign key (order_id) references orders (id),
+    constraint order_products_ibfk_2
+        foreign key (product_id) references products (id)
+)
+    engine = InnoDB;
+
+create index product_id
+    on order_products (product_id);
+
